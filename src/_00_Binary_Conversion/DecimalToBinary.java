@@ -1,6 +1,6 @@
 package _00_Binary_Conversion;
 
-public class Decimal_To_Binary {
+public class DecimalToBinary {
 	public static void main(String[] args) {
 		//Converting a decimal number to binary is a little trickier.
 		
@@ -31,5 +31,16 @@ public class Decimal_To_Binary {
 		 *         
 		 *         43 in decimal is 101011 in binary!
 		 */
+		System.out.println("TEST:   " + d2b(43432) + "\nACTUAL: 1010100110101000");
+	}
+	
+	public static String d2b(int d) {
+		String b = "";
+		while (d > 0) {
+			b = d%2 + b;
+			d = d/2;
+		}
+		
+		return b;
 	}
 }

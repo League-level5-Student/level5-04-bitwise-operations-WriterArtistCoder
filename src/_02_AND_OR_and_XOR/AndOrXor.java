@@ -31,7 +31,7 @@ public class AndOrXor {
 		// 5 | 9 = 1 1 0 1  <--If there is a 1 in the 5 or 9 column, it produces a 1 in the same column in the result.
 		
 		// Example:
-		// What is the value of 2 | 6?
+		// What is the value of 2 | 6? 
 		// 2     = 0 1 0
 		// 6     = 1 1 0
 		// 6 | 2 = 1 1 0 = 6

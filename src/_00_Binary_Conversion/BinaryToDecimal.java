@@ -25,5 +25,29 @@ public class BinaryToDecimal {
 				    010110 in binary is equal to 22 in decimal!
 		 
 		 */
+		
+		System.out.println("TEST:   " + b2d("1101010101") + "\nACTUAL: " + 0b1101010101);
+	}
+	
+	public static int b2d(String b) {
+		int d = 0;
+		b = reverse(b);
+		
+		for (int i = 0; i < b.length(); i++) {
+			if (b.charAt(i) == '1') {
+				d+=Math.pow(2, i);
+			}
+		}
+		
+		return d;
+	}
+	
+	public static String reverse(String s) {
+		String newStr = "";
+		for (char c : s.toCharArray()) {
+			newStr = c + newStr;
+		}
+		
+		return newStr;
 	}
 }
