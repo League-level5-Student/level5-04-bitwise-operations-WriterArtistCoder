@@ -1,5 +1,7 @@
 package _03_Printing_Binary;
 
+import java.util.Random;
+
 import _00_Binary_Conversion.DecimalToBinary;
 
 public class BinaryPrinter {
@@ -10,27 +12,45 @@ public class BinaryPrinter {
 	//Create a main method to test your methods.
 	
 	public static void main(String[] args) {
-		// TODO test the methods
+		
+		printByteBinary((byte) Math.abs(new Random().nextInt(128)));
+		System.out.println();
+		
+		printShortBinary((short) Math.abs(new Random().nextInt(32768)));
+		System.out.println();
+		
+		printIntBinary(Math.abs(new Random().nextInt()));
+		System.out.println();
+		
+		printLongBinary(Math.abs(new Random().nextLong()));
+		System.out.println();
+		
 	}
 	
-	public void printByteBinary(byte b) {
+	public static void printByteBinary(byte b) {
 		System.out.println("DECIMAL: " + b);
 		System.out.println("BINARY:  " + DecimalToBinary.d2b(b));
 	}
 	
-	public void printShortBinary(short s) {
+	public static void printShortBinary(short s) {
 		System.out.println("DECIMAL: " + s);
 		System.out.println("BINARY:  " + DecimalToBinary.d2b(s));
 	}
 	
-	public void printIntBinary(int i) {
+	public static void printIntBinary(int i) {
 		System.out.println("DECIMAL: " + i);
 		System.out.println("BINARY:  " + DecimalToBinary.d2b(i));
 	}
 	
-	public void printLongBinary(long l) {
-		// TODO make long converter
+	public static void printLongBinary(long l) {
 		System.out.println("DECIMAL: " + l);
-		System.out.println("BINARY:  " + "???");
+		
+		String b = "";
+		while (l > 0) {
+			b = l%2 + b;
+			l = l/2;
+		}
+		
+		System.out.println("BINARY:  " + b);
 	}
 }
